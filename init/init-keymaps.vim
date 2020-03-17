@@ -127,6 +127,7 @@ endif
 "----------------------------------------------------------------------
 noremap <silent> <leader>bn :bn<cr>
 noremap <silent> <leader>bp :bp<cr>
+noremap <silent> <leader>bd :bd<cr>
 
 
 "----------------------------------------------------------------------
@@ -238,7 +239,11 @@ let g:asyncrun_bell = 1
 nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 
 " F9 编译 C/C++ 文件
-nnoremap <silent> <F9> :AsyncRun gcc -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+nnoremap <silent> <F9> :<Esc>:w<CR>:AsyncRun clang++ -std=c++14  -Werror -Weverything  -Wall  "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+"nnoremap <silent> <F9> :AsyncRun clang++ -std=c++11 -stdlib=libc++ -Werror -Weverything -Wno-disabled-macro-expansion -Wno-float-equal -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-global-constructors -Wno-exit-time-destructors -Wno-missing-prototypes -Wno-padded -Wno-old-style-cast -lc++ -lc++abi -g  -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+
+" F1 使用g++编译
+nnoremap <silent> <F1> :<Esc>:w<CR>:AsyncRun g++ -std=c++11 -Wall -Werror  -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
 
 " F5 运行文件
 nnoremap <silent> <F5> :call ExecuteFile()<cr>
@@ -254,6 +259,7 @@ nnoremap <silent> <F6> :AsyncRun -cwd=<root> -raw make test <cr>
 
 " 更新 cmake
 nnoremap <silent> <F4> :AsyncRun -cwd=<root> cmake . <cr>
+
 
 " Windows 下支持直接打开新 cmd 窗口运行
 if has('win32') || has('win64')
@@ -330,4 +336,42 @@ else
 				\ '<root>' <cr>
 endif
 
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
+let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
+"------------------------------------------------------------------------
+"  大括号补全(打出大括号并缩进)
+"________________________________________________________________________
+autocmd Filetype c,cpp,h inoremap {<CR> {<CR>}<Esc>O
+
+"------------------------------------------------------------------------
+" vimspector 调试插件
+"------------------------------------------------------------------------
+
+" CTRL+F10 stepover
+nmap <c-F10> <Plug>VimspectorStepOver
+
+" CTRL+F2 stepinto
+nmap <c-F2> <Plug>VimspectorStepInto
+
+" CTRL+F3 stepout
+nmap <c-F3> <Plug>VimspectorStepOut
+
+" CTRL+F4 启动相同配置重新启动调试
+nmap <c-F4> <Plug>VimspectorRestart
+
+" CTRL+F5 启动调试/继续  
+nmap <c-F5> <Plug>VimspectorContinue
+
+" CTRL+F6 暂停
+nmap <c-F6> <Plug>VimspectorPause
+
+" CTRL+F7 停止调试
+nmap <c-F7> <Plug>VimspectorStop
+
+" CTRL+F8 添加函数断点
+nmap <c-F8> <Plug>VimspectorAddFunctionBreakpoint
+
+" CTRL+F9 为当前行添加断点
+nmap <c-F9> <Plug>VimspectorToggleBreakpoint

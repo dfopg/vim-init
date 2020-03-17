@@ -43,6 +43,9 @@ set splitright
 " 颜色主题：色彩文件位于 colors 目录中
 "----------------------------------------------------------------------
 
+"
+set termguicolors
+
 " 设置黑色背景
 set background=dark
 
@@ -50,7 +53,12 @@ set background=dark
 set t_Co=256
 
 " 设置颜色主题，会在所有 runtimepaths 的 colors 目录寻找同名配置
-color desert256
+"color desert256
+"color sublime
+
+" gruvbox-material配色设置 vales: hard, medium soft
+let g:gruvbox_material_background = 'hard'
+colorscheme gruvbox-material
 
 
 "----------------------------------------------------------------------
@@ -96,8 +104,8 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE
 	\ gui=NONE guifg=DarkGrey guibg=NONE
 
 " 修正补全目录的色彩：默认太难看
-hi! Pmenu guibg=gray guifg=black ctermbg=gray ctermfg=black
-hi! PmenuSel guibg=gray guifg=brown ctermbg=brown ctermfg=gray
+"hi! Pmenu guibg=gray guifg=black ctermbg=gray ctermfg=black
+"hi! PmenuSel guibg=gray guifg=brown ctermbg=brown ctermfg=gray
 
 
 "----------------------------------------------------------------------
@@ -283,9 +291,7 @@ endfunc
 "----------------------------------------------------------------------
 " 标签栏最终设置
 "----------------------------------------------------------------------
-set tabline=%!Vim_NeatTabLine()
-set guitablabel=%{Vim_NeatGuiTabLabel()}
-set guitabtooltip=%{Vim_NeatGuiTabTip()}
-
-
-
+"set tabline=%!Vim_NeatTabLine()
+"set guitablabel=%{Vim_NeatGuiTabLabel()}
+"set guitabtooltip=%{Vim_NeatGuiTabTip()}
+"
