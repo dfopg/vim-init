@@ -729,9 +729,6 @@ let tagbar_left=1
 nnoremap <Leader>t :TagbarToggle<CR> <c-w>h<CR>
 " 设置标签子窗口的宽度
 let tagbar_width=28
-" 使用gtags为tagbar提供支持
-" let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-let g:tagbar_ctags_bin='/usr/local/bin/gtags'
 " tagbar 子窗口中不显示冗余帮助信息
 "let g:tagbar_compact=1
 " 设置 ctags 对哪些代码标识符生成标签
