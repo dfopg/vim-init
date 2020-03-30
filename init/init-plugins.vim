@@ -232,24 +232,24 @@ if index(g:bundle_group, 'tags') >= 0
 	" 默认禁用自动生成
 	let g:gutentags_modules = [] 
 
-	" 如果有 ctags 可执行就允许动态生成 ctags 文件
-	if executable('ctags')
-		let g:gutentags_modules += ['ctags']
-	endif
+	"" 如果有 ctags 可执行就允许动态生成 ctags 文件
+	"if executable('ctags')
+	"	let g:gutentags_modules += ['ctags']
+	"endif
 
 	" 如果有 gtags 可执行就允许动态生成 gtags 数据库
 	if executable('gtags') && executable('gtags-cscope')
 		let g:gutentags_modules += ['gtags_cscope']
 	endif
 
-	" 设置 ctags 的参数
-	let g:gutentags_ctags_extra_args = []
-	let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-	let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-	let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+	"" 设置 ctags 的参数
+	"let g:gutentags_ctags_extra_args = []
+	"let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+	"let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+	"let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 	" 使用 universal-ctags 的话需要下面这行，请反注释
-	let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
+	"let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
 
 	" 禁止 gutentags 自动链接 gtags 数据库
 	let g:gutentags_auto_add_gtags_cscope = 0
@@ -726,7 +726,7 @@ Plug 'vim-scripts/a.vim'
 " 设置 tagbar 子窗口的位置出现在主编辑区的左边
 let tagbar_left=1
 " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
-nnoremap <Leader>t :TagbarToggle<CR> <c-w>h<CR>
+"nnoremap <Leader>t :TagbarToggle<CR> <c-w>h<CR>
 " 设置标签子窗口的宽度
 let tagbar_width=28
 " tagbar 子窗口中不显示冗余帮助信息
