@@ -16,8 +16,8 @@
 if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes']
 	"let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
-	let g:bundle_group += ['tags', 'airline' , 'ale', 'echodoc']
-	"let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
+	"let g:bundle_group += ['tags', 'airline' , 'ale', 'echodoc']
+	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
 	let g:bundle_group += ['leaderf']
 endif
 
@@ -47,7 +47,7 @@ call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
 Plug 'easymotion/vim-easymotion'
 
 " 文件浏览器，代替 netrw
-Plug 'justinmk/vim-dirvish'
+"Plug 'justinmk/vim-dirvish'
 
 " 表格对齐，使用命令 Tabularize
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
@@ -233,7 +233,7 @@ if index(g:bundle_group, 'tags') >= 0
 	" 默认禁用自动生成
 	let g:gutentags_modules = [] 
 
-	"" 如果有 ctags 可执行就允许动态生成 ctags 文件
+	" 如果有 ctags 可执行就允许动态生成 ctags 文件
 	"if executable('ctags')
 	"	let g:gutentags_modules += ['ctags']
 	"endif
@@ -343,13 +343,13 @@ endif
 " NERDTree
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'nerdtree') >= 0
-	"Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
-	"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+	Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
+	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 	"Plug 'Xuyuanp/nerdtree-git-plugin'
 	let g:NERDTreeMinimalUI = 1
 	let g:NERDTreeDirArrows = 1
 	let g:NERDTreeHijackNetrw = 0
-	noremap <space>nn :NERDTree<cr>
+	noremap <space>nn :NERDTree<cr> <c-w>h<CR>
 	"noremap <space>no :NERDTreeFocus<cr>
 	"noremap <space>nm :NERDTreeMirror<cr>
 	"noremap <space>nt :NERDTreeToggle<cr>
@@ -604,7 +604,7 @@ let g:ycm_complete_in_comments=1
 let g:ycm_min_num_of_chars_for_completion=1
 
 " 禁止缓存匹配项，每次都重新生成匹配项
-"let g:ycm_cache_omnifunc=0
+let g:ycm_cache_omnifunc=0
 
 " 语法关键字补全
 let g:ycm_seed_identifiers_with_syntax=1
@@ -682,15 +682,9 @@ let g:ycm_filetype_whitelist = {
 
 Plug 'voldikss/vim-translator'
 
-"nmap <silent> <Leader>t <Plug>Translate
-"vmap <silent> <Leader>t <Plug>TranslateV
 "" Display translation in a window
 nmap <silent> <Leader>w <Plug>TranslateW
 vmap <silent> <Leader>w <Plug>TranslateWV
-" Replace the text with translation
-"nmap <silent> <Leader>r <Plug>TranslateR
-"vmap <silent> <Leader>r <Plug>TranslateRV
-
 
 "----------------------------------------------------------------------
 " Plug 'skywind3000/vim-cppman' 使用c+] 或者k
