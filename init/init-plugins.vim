@@ -55,7 +55,6 @@ Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 " Diff 增强，支持 histogram / patience 等更科学的 diff 算法
 Plug 'chrisbra/vim-diff-enhanced'
 
-
 "----------------------------------------------------------------------
 " Dirvish 设置：自动排序并隐藏文件，同时定位到相关文件
 " 这个排序函数可以将目录排在前面，文件排在后面，并且按照字母顺序排序
@@ -124,10 +123,6 @@ if index(g:bundle_group, 'basic') >= 0
 	" Git 支持
 	Plug 'tpope/vim-fugitive'
 	
-	" 翻译
-	"Plug 'hy172574895/EasyCompleteYou'
-	"Plug 'hy172574895/ECY-dictionary'
-
 	" 使用 ALT+E 来选择窗口
 	nmap <m-e> <Plug>(choosewin)
 
@@ -703,11 +698,6 @@ autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
 "----------------------------------------------------------------------
 Plug 'wakatime/vim-wakatime'
 let g:wakatime_PythonBinary = '/usr/bin/python'  " (Default: 'python')
-
-"----------------------------------------------------------------------
-" 显示ultisnips模板内容的插件
-"let g:ECY_expand_snippets_key = '<F12>'
-"----------------------------------------------------------------------
 
 "----------------------------------------------------------------------
 " a.vim 快速切换头文件
