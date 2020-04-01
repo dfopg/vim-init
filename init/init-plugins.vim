@@ -102,7 +102,7 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'sainnhe/gruvbox-material'
 
 	" 支持库，给其他插件用的函数库
-	Plug 'xolox/vim-misc'
+	"Plug 'xolox/vim-misc'
 
 	" 书签插件 可以显示所有书签
 	Plug 'MattesGroeger/vim-bookmarks'
