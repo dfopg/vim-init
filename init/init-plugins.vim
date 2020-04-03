@@ -167,7 +167,7 @@ if index(g:bundle_group, 'enhanced') >= 0
 	nnoremap <leader>f :FlyGrep<cr>
 
 	" 使用 :CtrlSF 命令进行模仿 sublime 的 grep
-	"Plug 'dyng/ctrlsf.vim'
+	Plug 'dyng/ctrlsf.vim'
 
 	" 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
