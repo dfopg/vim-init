@@ -164,10 +164,12 @@ if index(g:bundle_group, 'enhanced') >= 0
 
 	" 使用 :FlyGrep 命令进行实时 grep
 	Plug 'wsdjeg/FlyGrep.vim'
-	nnoremap <leader>f :FlyGrep<cr>
 
 	" 使用 :CtrlSF 命令进行模仿 sublime 的 grep
 	Plug 'dyng/ctrlsf.vim'
+	nnoremap <leader>f :CtrlSF<CR> <C-W>h<CR>
+	nmap <Leader><Leader>c :CtrlSF<space>
+
 
 	" 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
