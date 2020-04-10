@@ -168,7 +168,7 @@ if index(g:bundle_group, 'enhanced') >= 0
 	" 使用 :CtrlSF 命令进行模仿 sublime 的 grep
 	Plug 'dyng/ctrlsf.vim'
 	nnoremap <leader>f :CtrlSF<CR> <C-W>h<CR>
-	nmap <Leader><Leader>c :CtrlSF<space>
+	nmap <Leader><Leader>c :CtrlSF<space> <C-W><CR>
 
 
 	" 配对括号和引号自动补全
