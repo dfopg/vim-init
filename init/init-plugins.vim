@@ -168,7 +168,7 @@ if index(g:bundle_group, 'enhanced') >= 0
 	" 使用 :CtrlSF 命令进行模仿 sublime 的 grep
 	Plug 'dyng/ctrlsf.vim'
 	nnoremap <leader>f :CtrlSF<CR> <C-W>h<CR>
-	nmap <Leader><Leader>c :CtrlSF<space> <C-W><CR>
+	nnoremap <Leader><Leader>c :CtrlSF<space>
 
 
 	" 配对括号和引号自动补全
@@ -686,7 +686,7 @@ vmap <silent> <Leader>w <Plug>TranslateWV
 "----------------------------------------------------------------------
 " Plug 'skywind3000/vim-cppman' 使用c+] 或者k
 "----------------------------------------------------------------------
-"Plug 'skywind3000/vim-cppman'
+Plug 'skywind3000/vim-cppman'
 command! -nargs=+ Cppman silent! call system("tmux split-window -h cppman " . expand(<q-args>))
 autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
 
