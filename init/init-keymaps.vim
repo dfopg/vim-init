@@ -238,8 +238,12 @@ let g:asyncrun_bell = 1
 nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 
 " F9 编译 C/C++ 文件
-nnoremap <silent> <F9> :<Esc>:w<CR>:AsyncRun clang++ -std=c++14  -Werror -Weverything  -Wall  "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+"nnoremap <silent> <F9> :<Esc>:w<CR>:AsyncRun clang++ -std=c++14  -Werror -Weverything  -Wall  "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
 "nnoremap <silent> <F9> :AsyncRun clang++ -std=c++11 -stdlib=libc++ -Werror -Weverything -Wno-disabled-macro-expansion -Wno-float-equal -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-global-constructors -Wno-exit-time-destructors -Wno-missing-prototypes -Wno-padded -Wno-old-style-cast -lc++ -lc++abi -g  -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+augroup ccompile
+    autocmd Filetype cpp nnoremap <silent> <F9> :<Esc>:w<CR>:AsyncRun clang++ -std=c++14  -Werror -Weverything  -Wall  "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+    autocmd Filetype c nnoremap <silent> <F9> :<Esc>:w<CR>:AsyncRun clang   -Werror -Weverything  -Wall  "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+augroup END
 
 " F1 使用g++编译
 nnoremap <silent> <F1> :<Esc>:w<CR>:AsyncRun g++ -std=c++11 -Wall -Werror  -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
