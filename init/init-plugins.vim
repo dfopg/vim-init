@@ -687,13 +687,14 @@ vmap <silent> <Leader>w <Plug>TranslateWV
 " Plug 'skywind3000/vim-cppman' 使用c+] 或者k
 "----------------------------------------------------------------------
 "Plug 'skywind3000/vim-cppman'
-command! -nargs=+ Cppman silent! call system("tmux split-window -h cppman " . expand(<q-args>))
-autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
+command! -nargs=+ Cppman silent! call system("tmux vsplit-window -h cppman " . expand(<q-args>))
+autocmd FileType cpp nnoremap <silent><buffer> k <Esc>:Cppman <cword><CR>
 
 "----------------------------------------------------------------------
 " 启动时间测试插件
 "----------------------------------------------------------------------
 "Plug 'tweekmonster/startuptime.vim'
+"Plug 'onjin/vim-startup'
 
 "----------------------------------------------------------------------
 " 编程时间计算插件
