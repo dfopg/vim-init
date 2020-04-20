@@ -378,3 +378,9 @@ nmap <c-F8> <Plug>VimspectorAddFunctionBreakpoint
 
 " CTRL+F9 为当前行添加断点
 nmap <c-F9> <Plug>VimspectorToggleBreakpoint
+
+
+"========================================================================
+" 快捷退出 如果未保存则提示
+"========================================================================
+noremap <silent>Q :confirm qall<cr>
