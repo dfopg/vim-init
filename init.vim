@@ -49,5 +49,6 @@ LoadScript init/init-style.vim
 " 自定义按键
 LoadScript init/init-keymaps.vim
 
-
+" 加载quickui
+LoadScript init/init-quickui.vim
 
