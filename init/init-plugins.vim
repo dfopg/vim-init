@@ -714,7 +714,7 @@ Plug 'majutsushi/tagbar'
 " 设置 tagbar 子窗口的位置出现在主编辑区的左边
 let tagbar_left=1
 " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
-nnoremap <Leader>t :TagbarToggle<CR> <c-w>h<CR>
+nnoremap <Leader>tb :TagbarToggle<CR> <c-w>h<CR>
 " 设置标签子窗口的宽度
 let tagbar_width=28
 " tagbar 子窗口中不显示冗余帮助信息
@@ -773,6 +773,15 @@ Plug 'skywind3000/vim-quickui'
 " vimspector调试插件
 "----------------------------------------------------------------------
 Plug 'puremourning/vimspector'
+
+"----------------------------------------------------------------------
+" AsyncTasks
+"----------------------------------------------------------------------
+Plug 'skywind3000/asynctasks.vim'
+Plug 'skywind3000/asyncrun.vim'
+
+" 自动打开quickfix窗口 高度为6
+let g:asyncrun_open = 6
 
 "----------------------------------------------------------------------
 " 结束插件安装
