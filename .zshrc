@@ -113,4 +113,4 @@ bindkey ';' autosuggest-accept
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
 #eval "$(lua /home/lan/.oh-my-zsh/custom/plugins/z.lua/z.lua  --init zsh once enhanced)"    # ZSH 初始化
-
+alias lg = lazygit
