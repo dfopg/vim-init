@@ -114,6 +114,8 @@ call quickui#menu#install('&Move', [
 			\ ["Quickfix L&ast\t:clast", 'clast', 'quickfix cursor to the end'],
 			\ ["Quickfix &Next\t:cnext", 'cnext', 'cursor next'],
 			\ ["Quickfix &Previous\t:cprev", 'cprev', 'quickfix cursor previous'],
+			\ ["--",''],
+			\ ["CtrlSF grep\tll-c", ":CtrlSF<space>"],
 			\ ])
 
 call quickui#menu#install("&Build", [

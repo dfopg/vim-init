@@ -167,7 +167,11 @@ if index(g:bundle_group, 'enhanced') >= 0
 
 	" 使用 :CtrlSF 命令进行模仿 sublime 的 grep
 	Plug 'dyng/ctrlsf.vim'
-	nnoremap <leader>f :CtrlSF<CR> <C-W>h<CR>
+	" 在搜索开始时就自动对焦
+	let g:ctrlsf_auto_focus = {
+    \ 'at': 'start',
+    \ }
+	nnoremap <leader>f :CtrlSF<CR>
 	nnoremap <Leader><Leader>c :CtrlSF<space>
 
 
@@ -346,22 +350,23 @@ if index(g:bundle_group, 'nerdtree') >= 0
 	let g:NERDTreeMinimalUI = 1
 	let g:NERDTreeDirArrows = 1
 	let g:NERDTreeHijackNetrw = 0
-	noremap <space>nn :NERDTree<cr> <c-w>h<CR>
+	let NERDTreeQuitOnOpen=1
+	noremap <space>nn :NERDTree<cr>
 	"noremap <space>no :NERDTreeFocus<cr>
 	"noremap <space>nm :NERDTreeMirror<cr>
 	"noremap <space>nt :NERDTreeToggle<cr>
-	let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
+""	let g:NERDTreeIndicatorMapCustom = {
+""    \ "Modified"  : "✹",
+""    \ "Staged"    : "✚",
+""    \ "Untracked" : "✭",
+""    \ "Renamed"   : "➜",
+""    \ "Unmerged"  : "═",
+""    \ "Deleted"   : "✖",
+""    \ "Dirty"     : "✗",
+""    \ "Clean"     : "✔︎",
+""    \ 'Ignored'   : '☒',
+""    \ "Unknown"   : "?"
+""    \ }
 endif
 
 
@@ -714,11 +719,12 @@ Plug 'majutsushi/tagbar'
 " 设置 tagbar 子窗口的位置出现在主编辑区的左边
 let tagbar_left=1
 " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
-nnoremap <Leader>tb :TagbarToggle<CR> <c-w>h<CR>
+nnoremap <Leader>tb :TagbarToggle<CR>
 " 设置标签子窗口的宽度
 let tagbar_width=28
+let g:tagbar_autofocus = 1
 " tagbar 子窗口中不显示冗余帮助信息
-let g:tagbar_compact=1
+"let g:tagbar_compact=1
 " 设置 ctags 对哪些代码标识符生成标签
 let g:tagbar_type_cpp = {
     \ 'kinds' : [
