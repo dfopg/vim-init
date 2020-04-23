@@ -257,7 +257,7 @@ noremap <silent><f9> :AsyncTask file-build<cr>
 noremap <silent><f6> :AsyncTask project-run<cr>
 noremap <silent><f7> :AsyncTask project-build<cr>
 " F1 使用g++编译
-nnoremap <silent> <F1> :<Esc>:w<CR>:AsyncRun g++ -std=c++11 -Wall -Werror  -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+"nnoremap <silent> <F1> :<Esc>:w<CR>:AsyncRun g++ -std=c++11 -Wall -Werror  -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
 
 " F5 运行文件
 "nnoremap <silent> <F5> :call ExecuteFile()<cr>
