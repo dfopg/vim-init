@@ -123,7 +123,7 @@ call quickui#menu#install("&Git", [
 			\ ['View &Status', 'Gstatus'],
 			\ ['&View Diff', 'Git diff'],
 			\ ['File &Add', 'Gwrite'],
-			\ ['&Commit', 'Gcommit -m  ']
+			\ ['&Commit', 'Gcommit']
 			\ ])
 
 call quickui#menu#install("P&ages",[
