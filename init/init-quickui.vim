@@ -67,7 +67,7 @@ call quickui#menu#reset()
 
 call quickui#menu#install("&File", [
 			\ [ "&Open\t(:o ..)", 'call feedkeys(":open ")'],
-			\ [ "&Save\t(:w)", 'write'],
+			\ [ "&Save", 'write'],
 			\ [ "--", ],
 			\ [ "LeaderF &File\t(A+p)", 'Leaderf file', 'Open file with leaderf'],
 			\ [ "LeaderF &Mru", 'Leaderf mru --regexMode', 'Open recently accessed files'],
@@ -90,42 +90,6 @@ call quickui#menu#install("&Edit", [
 			\ [ "Get &Type\t(YCM)", 'YcmCompleter GetTypeImprecise'],
 			\ ])
 
-call quickui#menu#install('&Move', [
-			\ ["Quickfix &First\t:cfirst", 'cfirst', 'quickfix cursor rewind'],
-			\ ["Quickfix L&ast\t:clast", 'clast', 'quickfix cursor to the end'],
-			\ ["Quickfix &Next\t:cnext", 'cnext', 'cursor next'],
-			\ ["Quickfix &Previous\t:cprev", 'cprev', 'quickfix cursor previous'],
-			\ ["--",''],
-			\ ["CtrlSF *this\tl-f", ':CtrlSF'],
-			\ ["CtrlSF grep\tll-c", ''],
-			\ ])
-
-call quickui#menu#install("&Build", [
-			\ ["File &Execute\tF5", 'AsyncTask file-run'],
-			\ ["File &Compile\tF9", 'AsyncTask file-build'],
-			\ ["File E&make\tF7", 'AsyncTask emake'],
-			\ ["File &Start\tF8", 'AsyncTask emake-exe'],
-			\ ['--', ''],
-			\ ["&Project Build\tF9", 'AsyncTask project-build'],
-			\ ["&Project Build\tF9", 'AsyncTask project-build'],
-			\ ["Project &Run\tShift+F5", 'AsyncTask project-run'],
-			\ ["Project &Test\tShift+F6", 'AsyncTask project-test'],
-			\ ["Project &Init\tShift+F7", 'AsyncTask project-init'],
-			\ ['--', ''],
-			\ ["T&ask List\tCtrl+F10", 'call MenuHelp_TaskList()'],
-			\ ['E&dit Task', 'AsyncTask -e'],
-			\ ['Edit &Global Task', 'AsyncTask -E'],
-			\ ['&Stop Building', 'AsyncStop'],
-			\ ])
-
-call quickui#menu#install("&Git", [
-			\ ['Show &Log', 'G log'],
-			\ ['View &Status', 'Gstatus'],
-			\ ['&View Diff', 'Git diff'],
-			\ ['File &Add', 'Gwrite'],
-			\ ['&Commit', 'Gcommit']
-			\ ])
-
 call quickui#menu#install("P&ages",[
 			\ ["TabN&ew\t(l-tc)",':tabnew'],
 			\ ["Tab&Next\t(l-tn)", ':tabnext'],
@@ -138,6 +102,37 @@ call quickui#menu#install("P&ages",[
 			\ ["Buffe&Del\t(l-bd)", ':bd'],
 			\ ["--",''],
 			\ ["Choose&Win\t(m-e)", 'ChooseWin'],
+			\ ])
+
+call quickui#menu#install('&Move', [
+			\ ["Quickfix &First\t:cfirst", 'cfirst', 'quickfix cursor rewind'],
+			\ ["Quickfix L&ast\t:clast", 'clast', 'quickfix cursor to the end'],
+			\ ["Quickfix &Next\t:cnext", 'cnext', 'cursor next'],
+			\ ["Quickfix &Previous\t:cprev", 'cprev', 'quickfix cursor previous'],
+			\ ["--",''],
+			\ ["&CtrlSF *this\tl-f", ':CtrlSF'],
+			\ ["CtrlSF grep\tll-c", ''],
+			\ ])
+
+call quickui#menu#install("&Build", [
+			\ ["File &Run\tF4", 'AsyncTask file-build'],
+			\ ["File &Build\tF5", 'AsyncTask file-run'],
+			\ ['--', ''],
+			\ ["Proj&ect build\tF6", 'AsyncTask project-build'],
+			\ ["Pro&ject Run\tF7", 'AsyncTask project-run'],
+			\ ['--', ''],
+			\ ['E&dit Task', 'AsyncTask -e'],
+			\ ['Edit &Global Task', 'AsyncTask -E'],
+			\ ['&Stop Building', 'AsyncStop'],
+			\ ])
+
+call quickui#menu#install("&Git", [
+			\ ['Show &Log', 'G log'],
+			\ ['View &Status', 'Gstatus'],
+			\ ['&View Diff', 'Git diff'],
+			\ ['File &Add', 'Gwrite'],
+			\ ['&Commit', 'Gcommit'],
+			\ ['&Push', 'G push'],
 			\ ])
 
 call quickui#menu#install('&Tools', [

@@ -251,35 +251,11 @@ let g:asynctasks_term_pos = 'right'
 let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg']
 
 
-noremap <silent><f5> :AsyncTask file-run<cr>
-noremap <silent><f9> :AsyncTask file-build<cr>
+noremap <silent><F5> :AsyncTask file-run<cr>
+noremap <silent><F4> :AsyncTask file-build<cr>
 
-noremap <silent><f6> :AsyncTask project-run<cr>
-noremap <silent><f7> :AsyncTask project-build<cr>
-" F1 使用g++编译
-"nnoremap <silent> <F1> :<Esc>:w<CR>:AsyncRun g++ -std=c++11 -Wall -Werror  -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
-
-" F5 运行文件
-"nnoremap <silent> <F5> :call ExecuteFile()<cr>
-
-" F7 编译项目
-"nnoremap <silent> <F7> :AsyncRun -cwd=<root> make <cr>
-
-" F8 运行项目
-"nnoremap <silent> <F8> :AsyncRun -cwd=<root> -raw make run <cr>
-
-" F6 测试项目
-"nnoremap <silent> <F6> :AsyncRun -cwd=<root> -raw make test <cr>
-
-" 更新 cmake
-nnoremap <silent> <F4> :AsyncRun -cwd=<root> cmake . <cr>
-
-
-"" Windows 下支持直接打开新 cmd 窗口运行
-"if has('win32') || has('win64')
-"	nnoremap <silent> <F8> :AsyncRun -cwd=<root> -mode=4 make run <cr>
-"endif
-
+noremap <silent><F7> :AsyncTask project-run<cr>
+noremap <silent><F6> :AsyncTask project-build<cr>
 
 ""----------------------------------------------------------------------
 "" F5 运行当前文件：根据文件类型判断方法，并且输出到 quickfix 窗口
