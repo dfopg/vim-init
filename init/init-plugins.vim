@@ -774,6 +774,7 @@ Plug 'terryma/vim-multiple-cursors'
 " quickui
 "----------------------------------------------------------------------
 Plug 'skywind3000/vim-quickui'
+let g:quickui_color_scheme = 'gruvbox'
 
 "----------------------------------------------------------------------
 " vimspector调试插件

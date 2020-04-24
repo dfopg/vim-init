@@ -189,7 +189,7 @@ call quickui#menu#install('Help (&?)', [
 " context menu
 "----------------------------------------------------------------------
 let g:context_menu_k = [
-			\ ["&Peek Definition\tAlt+;", 'call quickui#tools#preview_tag("")'],
+			\ ['Cpp&man', 'exec "Cppman " . expand("<cword>")', '', 'c,cpp'],
 			\ ["S&earch in Project\t\\cx", 'exec "silent! GrepCode! " . expand("<cword>")'],
 			\ [ "--", ],
 			\ [ "Find &Definition\t\\cg", 'call MenuHelp_Fscope("g")', 'GNU Global search g'],
@@ -202,10 +202,6 @@ let g:context_menu_k = [
 			\ [ "Goto &References\t(YCM)", 'YcmCompleter GoToReferences'],
 			\ [ "Get D&oc\t(YCM)", 'YcmCompleter GetDoc'],
 			\ [ "Get &Type\t(YCM)", 'YcmCompleter GetTypeImprecise'],
-			\ [ "--", ],
-			\ ['Dash &Help', 'call asclib#utils#dash_ft(&ft, expand("<cword>"))'],
-			\ ['Cpp&man', 'exec "Cppman " . expand("<cword>")', '', 'c,cpp'],
-			\ ['P&ython Doc', 'call quickui#tools#python_help("")', 'python'],
 			\ ]
 
 
@@ -219,3 +215,10 @@ nnoremap <silent>K :call quickui#tools#clever_context('k', g:context_menu_k, {})
 if has('gui_running') || has('nvim')
 	noremap <c-f10> :call MenuHelp_TaskList()<cr>
 endif
+
+call quickui#menu#install('&Debug',[
+			\ ["&Begin/Continue\tC-F5", 'call vimspector#Launch()'],
+			\ ["Break&Point\tC-F9", 'call vimspector#ToggleBreakpoint()'],
+			\ ["&Step\tC-F2", 'call vimspector#StepInto()'],
+			\ ["&Close", 'call vimspector#Reset()'],
+			\ ])
