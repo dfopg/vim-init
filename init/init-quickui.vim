@@ -82,27 +82,8 @@ call quickui#menu#install("&File", [
 			\ ])
 
 call quickui#menu#install("&Edit", [
-			\ ['Copyright &Header', 'call feedkeys("\<esc> ec")', 'Insert copyright information at the beginning'],
-			\ ['&Trailing Space', 'call StripTrailingWhitespace()', ''],
-			\ ['Update &ModTime', 'call UpdateLastModified()', ''],
-			\ ['&Paste Mode Line', 'PasteVimModeLine', ''],
-			\ ['Format J&son', '%!python -m json.tool', ''],
-			\ ['--'],
-			\ ['&Align Table', 'Tabularize /|', ''],
-			\ ['Align &Cheatsheet', 'MyCheatSheetAlign', ''],
-			\ ['--', ''],
 			\ ["Tag&Bar\t(l-tb)", 'TagbarToggle'],
-			\ ])
-
-call quickui#menu#install('&Symbol', [
-			\ [ "&Grep Word\t(In Project)", 'call MenuHelp_GrepCode()', 'Grep keyword in current project' ],
-			\ [ "--", ],
-			\ [ "Find &Definition\t(GNU Global)", 'call MenuHelp_Gscope("g")', 'GNU Global search g'],
-			\ [ "Find &Symbol\t(GNU Global)", 'call MenuHelp_Gscope("s")', 'GNU Gloal search s'],
-			\ [ "Find &Called by\t(GNU Global)", 'call MenuHelp_Gscope("d")', 'GNU Global search d'],
-			\ [ "Find C&alling\t(GNU Global)", 'call MenuHelp_Gscope("c")', 'GNU Global search c'],
-			\ [ "Find &From Ctags\t(GNU Global)", 'call MenuHelp_Gscope("z")', 'GNU Global search c'],
-			\ [ "--", ],
+			\ ['--', ''],
 			\ [ "Goto D&efinition\t(YCM)", 'YcmCompleter GoToDefinitionElseDeclaration'],
 			\ [ "Goto &References\t(YCM)", 'YcmCompleter GoToReferences'],
 			\ [ "Get D&oc\t(YCM)", 'YcmCompleter GetDoc'],
@@ -115,7 +96,8 @@ call quickui#menu#install('&Move', [
 			\ ["Quickfix &Next\t:cnext", 'cnext', 'cursor next'],
 			\ ["Quickfix &Previous\t:cprev", 'cprev', 'quickfix cursor previous'],
 			\ ["--",''],
-			\ ["CtrlSF grep\tll-c", ":CtrlSF<space>"],
+			\ ["CtrlSF *this\tl-f", ':CtrlSF'],
+			\ ["CtrlSF grep\tll-c", ''],
 			\ ])
 
 call quickui#menu#install("&Build", [
@@ -137,9 +119,11 @@ call quickui#menu#install("&Build", [
 			\ ])
 
 call quickui#menu#install("&Git", [
-			\ ['&View Diff', 'call svnhelp#svn_diff("%")'],
-			\ ['&Show Log', 'call svnhelp#svn_log("%")'],
-			\ ['File &Add', 'call svnhelp#svn_add("%")'],
+			\ ['Show &Log', 'G log'],
+			\ ['View &Status', 'Gstatus'],
+			\ ['&View Diff', 'Git diff'],
+			\ ['File &Add', 'Gwrite'],
+			\ ['&Commit', 'Gcommit -m  ']
 			\ ])
 
 call quickui#menu#install("P&ages",[
