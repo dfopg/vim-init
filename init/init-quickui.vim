@@ -126,6 +126,13 @@ call quickui#menu#install("&Build", [
 			\ ['&Stop Building', 'AsyncStop'],
 			\ ])
 
+call quickui#menu#install('&Debug',[
+			\ ["&Begin/Continue\tC-F5", 'call vimspector#Launch()'],
+			\ ["Break&Point\tC-F9", 'call vimspector#ToggleBreakpoint()'],
+			\ ["&Step\tC-F2", 'call vimspector#StepInto()'],
+			\ ["&Close", 'call vimspector#Reset()'],
+			\ ])
+
 call quickui#menu#install("&Git", [
 			\ ['Show &Log', 'G log'],
 			\ ['View &Status', 'Gstatus'],
@@ -215,10 +222,3 @@ nnoremap <silent>K :call quickui#tools#clever_context('k', g:context_menu_k, {})
 if has('gui_running') || has('nvim')
 	noremap <c-f10> :call MenuHelp_TaskList()<cr>
 endif
-
-call quickui#menu#install('&Debug',[
-			\ ["&Begin/Continue\tC-F5", 'call vimspector#Launch()'],
-			\ ["Break&Point\tC-F9", 'call vimspector#ToggleBreakpoint()'],
-			\ ["&Step\tC-F2", 'call vimspector#StepInto()'],
-			\ ["&Close", 'call vimspector#Reset()'],
-			\ ])
