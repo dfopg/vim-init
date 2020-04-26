@@ -724,7 +724,7 @@ nnoremap <Leader>tb :TagbarToggle<CR>
 let tagbar_width=28
 let g:tagbar_autofocus = 1
 " tagbar 子窗口中不显示冗余帮助信息
-"let g:tagbar_compact=1
+let g:tagbar_compact=1
 " 设置 ctags 对哪些代码标识符生成标签
 let g:tagbar_type_cpp = {
     \ 'kinds' : [
