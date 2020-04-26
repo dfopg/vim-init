@@ -801,8 +801,15 @@ let g:asyncrun_open = 6
 " ALT+ -：将寄存器0粘贴到端子。
 " ALT+ q：切换到终端普通模式
 "----------------------------------------------------------------------
-Plug 'skywind3000/vim-terminal-help'
+Plug 'dfopg/vim-terminal-help'
+
+" terminal窗口宽度
+let g:terminal_height = 75
+" 当vim退出时terminal也退出
+let g:terminal_kill = 'term'
+let g:terminal_close = 1
+
 "----------------------------------------------------------------------
 " 结束插件安装
 "----------------------------------------------------------------------
-  call plug#end()
+call plug#end()

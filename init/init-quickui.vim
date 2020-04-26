@@ -111,7 +111,7 @@ call quickui#menu#install('&Move', [
 			\ ["Quickfix &Previous\t:cprev", 'cprev', 'quickfix cursor previous'],
 			\ ["--",''],
 			\ ["&CtrlSF *this\tl-f", ':CtrlSF'],
-			\ ["CtrlSF grep\tll-c", ''],
+			\ ["CtrlSF &grep\tll-c", 'AsyncTask CtrlSF-grep'],
 			\ ])
 
 call quickui#menu#install("&Build", [
