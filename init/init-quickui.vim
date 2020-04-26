@@ -90,7 +90,7 @@ call quickui#menu#install("&Edit", [
 			\ [ "Get &Type\t(YCM)", 'YcmCompleter GetTypeImprecise'],
 			\ ])
 
-call quickui#menu#install("P&ages",[
+call quickui#menu#install("&Pages",[
 			\ ["TabN&ew\t(l-tc)",':tabnew'],
 			\ ["Tab&Next\t(l-tn)", ':tabnext'],
 			\ ["Tab&Prev\t(l-tp)", ':tabprev'],
@@ -160,11 +160,7 @@ call quickui#menu#install('&Tools', [
 			\ ["Proxy D&isable", 'call MenuHelp_Proxy(0)', 'clear http_proxy/https_proxy/all_proxy'],
 			\ ])
 
-call quickui#menu#install('&Plugin', [
-			\ ["&NERDTree\t<space>tn", 'NERDTreeToggle', 'toggle nerdtree'],
-			\ ['&Tagbar', '', 'toggle tagbar'],
-			\ ["&Choose Window/Tab\tAlt+e", "ChooseWin", "fast switch win/tab with vim-choosewin"],
-			\ ["-"],
+call quickui#menu#install('P&lugin', [
 			\ ["&Browse in github\trhubarb", "Gbrowse", "using tpope's rhubarb to open browse and view the file"],
 			\ ["&Startify", "Startify", "using tpope's rhubarb to open browse and view the file"],
 			\ ["&Gist", "Gist", "open gist with mattn/gist-vim"],
