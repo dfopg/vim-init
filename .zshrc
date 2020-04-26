@@ -110,7 +110,7 @@ bindkey ';' autosuggest-accept
 
 #启动时自动启动tmux
 # If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+#[[ $- != *i* ]] && return
+#[[ -z "$TMUX" ]] && exec tmux
 #eval "$(lua /home/lan/.oh-my-zsh/custom/plugins/z.lua/z.lua  --init zsh once enhanced)"    # ZSH 初始化
 alias lg = lazygit
