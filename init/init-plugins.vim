@@ -439,8 +439,10 @@ if index(g:bundle_group, 'ale') >= 0
 	let g:ale_python_flake8_options = '--conf='.s:lintcfg('flake8.conf')
 	let g:ale_python_pylint_options = '--rcfile='.s:lintcfg('pylint.conf')
 	let g:ale_python_pylint_options .= ' --disable=W'
-	let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
-	let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
+	"let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
+	"let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
+	let g:ale_c_clang_options = '-Wall -Werror -Weverything   -O2 -std=c11'
+	let g:ale_cpp_clang_options = '-Wall -Werror -Weverything -O2 -std=c++14'
 	let g:ale_c_cppcheck_options = ''
 	let g:ale_cpp_cppcheck_options = ''
 
