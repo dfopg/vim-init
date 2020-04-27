@@ -134,7 +134,7 @@ if index(g:bundle_group, 'basic') >= 0
 	noremap <silent><space>ha :RemoveErrorMarkers<cr>
 
 	" signify 调优
-	let g:signify_vcs_list = ['git', 'svn']
+	let g:signify_vcs_list = ['git']
 	let g:signify_sign_add               = '+'
 	let g:signify_sign_delete            = '_'
 	let g:signify_sign_delete_first_line = '‾'
@@ -225,7 +225,7 @@ if index(g:bundle_group, 'tags') >= 0
 	let $GTAGSCONF = '/usr/local/share/gtags/gtags.conf'
 
 	" 设定项目目录标志：除了 .git/.svn 外，还有 .root 文件
-	let g:gutentags_project_root = ['.root','.svn','.git','.hg','.project']
+	let g:gutentags_project_root = ['.root','.git','.hg','.project']
 	let g:gutentags_ctags_tagfile = '.tags'
 
 	" 默认生成的数据文件集中到 ~/.cache/tags 避免污染项目目录，好清理
@@ -502,7 +502,7 @@ if index(g:bundle_group, 'leaderf') >= 0
 		let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
 
 		" 如何识别项目目录，从当前文件目录向父目录递归知道碰到下面的文件/目录
-		let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
+		let g:Lf_RootMarkers = ['.project', '.root', '.git']
 		let g:Lf_WorkingDirectoryMode = 'Ac'
 		let g:Lf_WindowHeight = 0.30
 		let g:Lf_CacheDirectory = expand('~/.vim/cache')
@@ -515,7 +515,7 @@ if index(g:bundle_group, 'leaderf') >= 0
 
 		" 模糊匹配忽略扩展名
 		let g:Lf_WildIgnore = {
-					\ 'dir': ['.svn','.git','.hg'],
+					\ 'dir': ['.git','.hg'],
 					\ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
 					\ }
 
@@ -552,13 +552,13 @@ if index(g:bundle_group, 'leaderf') >= 0
 
 	"	" 模糊匹配忽略
 	"	let g:ctrlp_custom_ignore = {
-	"	  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+	"	  \ 'dir':  '\v[\/]\.(git|hg)$',
 	"	  \ 'file': '\v\.(exe|so|dll|mp3|wav|sdf|suo|mht)$',
 	"	  \ 'link': 'some_bad_symbolic_links',
 	"	  \ }
 
 	"	" 项目标志
-	"	let g:ctrlp_root_markers = ['.project', '.root', '.svn', '.git']
+	"	let g:ctrlp_root_markers = ['.project', '.root', '.git']
 	"	let g:ctrlp_working_path = 0
 
 	"	" CTRL+p 打开文件模糊匹配

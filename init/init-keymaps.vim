@@ -248,7 +248,7 @@ nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 "	left right 左右 external 外部
 "----------------------------------------------------------------------
 let g:asynctasks_term_pos = 'right'
-let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg']
+let g:asyncrun_rootmarks = ['.git', '.root', '.project', '.hg']
 
 
 noremap <silent><F5> :AsyncTask file-run<cr>
