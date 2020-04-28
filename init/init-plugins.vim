@@ -841,7 +841,6 @@ Plug 'dfopg/vim-terminal-help'
 
 " terminal窗口宽度
 let g:terminal_height = $COLUMNS
-"let g:terminal_height = 75
 " 当vim退出时terminal也退出
 let g:terminal_kill = 'term'
 let g:terminal_close = 1
