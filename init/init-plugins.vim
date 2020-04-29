@@ -186,9 +186,10 @@ if index(g:bundle_group, 'enhanced') >= 0
 	Plug 'SirVer/ultisnips'
 
 	" 键盘音效
-	"Plug 'skywind3000/vim-keysound'
+	Plug 'skywind3000/vim-keysound'
 	let g:keysound_enable=1
 	let g:keysound_theme='default'
+	let g:keysound_volume = 800
 	
 	let g:UltiSnipsSnippetsDir="~/.vim/bundles/ultisnips/mysnippets/cpp.snippets"
 	let g:UltiSnipsSnippetDirectories=["mysnippets"]
