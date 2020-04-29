@@ -247,7 +247,7 @@ nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 " 在外部终端窗口运行程序 bottom 下方内部 tab tab页面打开 vim !后的状态
 "	left right 左右 external 外部
 "----------------------------------------------------------------------
-let g:asynctasks_term_pos = 'right'
+let g:asynctasks_term_pos = 'bottom'
 let g:asyncrun_rootmarks = ['.git', '.root', '.project', '.hg']
 
 
