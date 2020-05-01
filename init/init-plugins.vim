@@ -345,8 +345,8 @@ endif
 " NERDTree
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'nerdtree') >= 0
-	Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
-	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+	"Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
+	"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 	"Plug 'Xuyuanp/nerdtree-git-plugin'
 	let g:NERDTreeMinimalUI = 1
 	let g:NERDTreeDirArrows = 1
@@ -845,6 +845,13 @@ let g:terminal_height = $COLUMNS
 " 当vim退出时terminal也退出
 let g:terminal_kill = 'term'
 let g:terminal_close = 1
+
+"----------------------------------------------------------------------
+" lf
+"----------------------------------------------------------------------
+Plug 'ptzz/lf.vim'
+let g:lf_map_keys = 0
+map <space>lf :Lf<CR>
 
 "----------------------------------------------------------------------
 " 结束插件安装
