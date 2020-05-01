@@ -8,11 +8,11 @@ call quickui#menu#install("&File", [
 			\ [ "&Open\t(:o ..)", 'call feedkeys(":open ")'],
 			\ [ "&Save", 'write'],
 			\ [ "--", ],
-			\ [ "LeaderF &File\t(A+p)", 'Leaderf file', 'Open file with leaderf'],
+			\ [ "LeaderF F&ile\t(A+p)", 'Leaderf file', 'Open file with leaderf'],
 			\ [ "LeaderF &Mru", 'Leaderf mru --regexMode', 'Open recently accessed files'],
 			\ [ "LeaderF &Buffer", 'Leaderf buffer', 'List current buffers in leaderf'],
 			\ [ "--", ],
-			\ [ "&Lf\t(S-lf)", 'Lf', ''],
+			\ [ "L&f\t(S-lf)", 'Lf', ''],
 			\ ])
 
 call quickui#menu#install("&File", [
