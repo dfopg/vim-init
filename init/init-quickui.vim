@@ -73,7 +73,7 @@ call quickui#menu#install("&File", [
 			\ [ "LeaderF &Mru", 'Leaderf mru --regexMode', 'Open recently accessed files'],
 			\ [ "LeaderF &Buffer", 'Leaderf buffer', 'List current buffers in leaderf'],
 			\ [ "--", ],
-			\ [ "NERD&Tree\t(S-nt)", 'NERDTree', ''],
+			\ [ "Lf\t(S-lf)", 'Lf', ''],
 			\ ])
 
 call quickui#menu#install("&File", [
