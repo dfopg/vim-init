@@ -854,6 +854,7 @@ Plug 'ptzz/lf.vim'
 " 禁用默认快捷键
 let g:lf_map_keys = 0
 map <space>lf :Lf<CR>
+let g:lf_command_override = 'lf -command "set hidden"'
 
 "----------------------------------------------------------------------
 " 结束插件安装
