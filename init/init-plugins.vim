@@ -803,9 +803,10 @@ let g:tagbar_type_c = {
 Plug 'ryanoasis/vim-devicons'
 
 "----------------------------------------------------------------------
-" vim-multiple-cursors
+" vim-visual-multi
 "----------------------------------------------------------------------
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
+
 
 "----------------------------------------------------------------------
 " quickui
