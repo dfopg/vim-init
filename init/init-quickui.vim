@@ -27,6 +27,8 @@ call quickui#menu#install("&Edit", [
 			\ [ "Goto &References\t(YCM)", 'YcmCompleter GoToReferences'],
 			\ [ "Get D&oc\t(YCM)", 'YcmCompleter GetDoc'],
 			\ [ "Get &Type\t(YCM)", 'YcmCompleter GetTypeImprecise'],
+			\ ['--', ''],
+			\ [ "&PEP8\t(=)", 'Autopep8']
 			\ ])
 
 call quickui#menu#install("&Pages",[

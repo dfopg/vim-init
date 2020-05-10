@@ -305,7 +305,7 @@ if index(g:bundle_group, 'filetypes') >= 0
 	Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'bison', 'flex', 'cpp'] }
 
 	" python 语法文件增强
-	"Plug 'vim-python/python-syntax', { 'for': ['python'] }
+	Plug 'vim-python/python-syntax', { 'for': ['python'] }
 
 	" rust 语法增强
 	"Plug 'rust-lang/rust.vim', { 'for': 'rust' }
@@ -856,7 +856,17 @@ let g:lf_map_keys = 0
 map <space>lf :Lf<CR>
 let g:lf_command_override = 'lf -command "set hidden"'
 
+"----------------------------------------------------------------------
+" vim-autopep8 将py文件格式化为符合pep8规范
+"----------------------------------------------------------------------
+Plug 'tell-k/vim-autopep8'
 
+" 并列显示差异化窗口
+let g:autopep8_diff_type='vertical'
+" 保存文件时自动格式化
+let g:autopep8_on_save = 1
+" 使用'='格式化
+autocmd FileType python set equalprg=autopep8\ -
 "----------------------------------------------------------------------
 " 结束插件安装
 "----------------------------------------------------------------------
