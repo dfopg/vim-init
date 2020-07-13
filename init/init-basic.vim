@@ -182,3 +182,7 @@ set wildignore+=*.linux2,*.win32,*.darwin,*.freebsd,*.linux,*.android
 "----------------------------------------------------------------------
 " 与windows共享剪贴板 
 set clipboard+=unnamed
+
+"编辑时底部总是留有三行
+set scrolloff=3
+
